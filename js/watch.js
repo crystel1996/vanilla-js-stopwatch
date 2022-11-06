@@ -37,7 +37,7 @@ class Watch {
     }
 
     watch () {
-
+            if (this._INTERVAL) clearInterval(this._INTERVAL)
             if (this._isStopped) {
                 this._minute = 0;
                 this._hour = 0;
@@ -48,7 +48,7 @@ class Watch {
             this._isStarted = true;
             this._isStopped = false;
             this._isBreak = false;
-
+        if (this._isStarted) {
             this._INTERVAL = setInterval(() => {
                 
                 this._millisecond = this._millisecond + 1;
@@ -76,6 +76,7 @@ class Watch {
                 this._SECOND.textContent = this._second > 9 ? this._second : `0${this._second}`;
                 this._MILLISECOND.textContent = this._millisecond > 9 ? this._millisecond : `0${this._millisecond}`;
             }, 10);
+        }
     }
 
     stop() {
@@ -96,10 +97,10 @@ class Watch {
         this._minute = 0;
         this._hour = 0;
         
-        this._MILLISECOND.textContent = this._millisecond;
-        this._SECOND.textContent = this._second;
-        this._MINUTE.textContent = this._minute;
-        this._HOUR.textContent = this._hour;
+        this._MILLISECOND.textContent = `0${this._millisecond}`;
+        this._SECOND.textContent = `0${this._second}`;
+        this._MINUTE.textContent = `0${this._minute}`;
+        this._HOUR.textContent = `0${this._hour}`;
         
     }
 
@@ -133,11 +134,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
      * @param {*} event 
      */
     startBtn.onclick = (event) => {
+        
         event.stopPropagation();
+        
         watch.start();
-        startBtn.classList.add('selected');
-        breakBtn.classList.remove('selected');
-        stopBtn.classList.remove('selected');
+
     };
 
     /**
@@ -145,11 +146,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
      * @param {*} event 
      */
     breakBtn.onclick = (event) => {
+
         event.stopPropagation();
+        
         watch.break();
-        breakBtn.classList.add('selected');
-        startBtn.classList.remove('selected');
-        stopBtn.classList.remove('selected');
+
     };
 
     /**
@@ -158,10 +159,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
      */
     stopBtn.onclick = (event) => {
         event.stopPropagation();
+        
         watch.stop();
-        breakBtn.classList.remove('selected');
-        startBtn.classList.remove('selected');
-        stopBtn.classList.add('selected');
+
     };
 
     /**
@@ -170,10 +170,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
      */
     resetBtn.onclick = (event) => {
         event.stopPropagation();
+        
         watch.reset();
-        breakBtn.classList.remove('selected');
-        startBtn.classList.remove('selected');
-        stopBtn.classList.remove('selected');
+
     };
 
 });
