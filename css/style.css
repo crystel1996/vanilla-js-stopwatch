@@ -48,7 +48,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover, button.selected {
     background: white;
     color: rgb(30,129,176);
 }
