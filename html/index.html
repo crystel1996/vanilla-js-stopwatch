@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Stopwatch-Vanilla Javascript</title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
         <link href="./../css/style.css" rel="stylesheet">
     </head>
     <body>
@@ -10,14 +12,18 @@
         </header>
         <section class="watch">
             <div class="content-watch">
-                <p class="first-time">00</p>
+                <p id="hour-time">00</p>
                 <p class="separator-time">:</p>
-                <p class="second-time">00</p>
+                <p id="minute-time">00</p>
+                <p class="separator-time">:</p>
+                <p id="second-time">00</p>
+                <p class="separator-time">:</p>
+                <p id="millisecond-time">00</p>
             </div>
         </section>
         <section class="action">
             <div>
-                <button>Start</button>
+                <button id="start-watch">Start</button>
             </div>
             <div>
                 <button>Break</button>
@@ -30,4 +36,5 @@
             </div>
         </section>
     </body>
+    <script src="./../js/watch.js"></script>
 </html>
