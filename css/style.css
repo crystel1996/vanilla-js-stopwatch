@@ -1,0 +1,54 @@
+body {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(30,129,176);
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.watch {
+    font-size: 3em;
+}
+
+.watch .content-watch {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+button {
+    background: none;
+    padding: 5px;
+    width: 150px;
+    height: 80px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5em;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+    color: rgb(30,129,176);
+}
